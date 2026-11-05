@@ -3,22 +3,22 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 
 // ===== CONFIGURAÇÃO =====
-const TABELA = "";   // nome da tabela no Supabase. Vazio = só lista as tabelas no log.
+const TABELA = "Leads";   // nome da tabela no Supabase. Vazio = só lista as tabelas no log.
 const DESDE = "";    // ex.: "2026-09-01" para exportar só a partir dessa data. Vazio = tudo.
 
 // Campo do painel -> nomes possíveis da coluna no Supabase (usa o primeiro que existir).
 // Nome, e-mail, telefone e rastreamento NÃO entram: só estes campos são gravados.
 const CAMPOS = {
-  data: ["data", "data_cadastro", "data_lead", "created_at"],
+  data: ["created_at"],
   fonte: ["fonte", "utm_source"],
   meio: ["meio", "utm_medium"],
   campanha: ["campanha", "utm_campaign"],
   conteudo: ["conteudo", "utm_content"],
   genero: ["genero"],
   idade: ["idade"],
-  renda: ["renda"],
+  renda: ["renda_mensal", "renda"],
   situacao_profissional: ["situacao_profissional"],
-  tempo_felipe: ["tempo_felipe"],
+  tempo_felipe: ["tempo_acompanhando_felipe", "tempo_felipe"],
   tempo_disponivel: ["tempo_disponivel"],
   experiencia: ["experiencia"],
   formacao: ["formacao"],
@@ -27,7 +27,7 @@ const CAMPOS = {
   capacidade_financeira: ["capacidade_financeira"],
   classificacao: ["classificacao"],
   score: ["score"],
-  plano: ["plano"],
+  plano: ["plano", "venda"],
   valor: ["valor"],
   data_venda: ["data_venda"],
 };
